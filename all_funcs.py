@@ -77,11 +77,11 @@ def create_wc(choice_user, data):
 # function to create top most used words after removing stopwords
 def user_sentiment(choice_user, data):
     classifier = pipeline('sentiment-analysis', model='distilbert-base-uncased-finetuned-sst-2-english')
-    temp_df = pd.DataFrame()
-    if choice_user == 'OverAll':
-        texts = data['Message'].tolist()
-    else:
-        texts = data[data['Name'] == choice_user]['Message']
+    # temp_df = pd.DataFrame()
+    # if choice_user == 'OverAll':
+    texts = data['Message'].tolist()
+    # else:
+    #     texts = data[data['Name'] == choice_user]['Message'].tolist()
     
     new_texts = [text if text is not None else "NA" for text in texts]
     # Initialize empty lists for positive, negative, and neutral scores

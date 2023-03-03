@@ -90,6 +90,9 @@ if selected == "Analysis":
                     
                     with col6:
                         st.dataframe(table_1, use_container_width = True)
+                
+                with st.container():
+                    st.dataframe(table_2, use_container_width = True)
             
             else: pass
 
@@ -97,8 +100,7 @@ if selected == "Analysis":
                 st.title("WordCloud")
                 st.pyplot(wc_1)
             
-            with st.container():
-                st.dataframe(table_2, use_container_width = True)
+            
 
 
 if selected == "ChatGPTLite":
@@ -114,13 +116,13 @@ if selected == "ChatGPTLite":
 
 if selected == "Image Recognition":
     st.sidebar.title("Image Recognition Dashboard")
-    file_upload = st.sidebar.file_uploader(label="Choose a File to upload") # File upload space
+    file_upload_2 = st.sidebar.file_uploader(label="Choose a File to upload") # File upload space
 
-    if file_upload is not None:
+    if file_upload_2 is not None:
         classnames = os.listdir("D:/Coursework/Mod-3/Unstructured Data Analytics/Project/images/MSBA_FACE")
         model = keras.models.load_model('D:/Coursework/Mod-3/Unstructured Data Analytics/Project/face_recognition_model.h5')
         img = keras.preprocessing.image.load_img(
-            file_upload, target_size = (180, 180))
+            file_upload_2, target_size = (180, 180))
         img_array = keras.preprocessing.image.img_to_array(img)
         img_array = tf.expand_dims(img_array, 0) # Create a batch
         predictions = model.predict(img_array)
@@ -129,7 +131,7 @@ if selected == "Image Recognition":
             "This image most likely belongs to {} with a {:.2f} percent confidence."
             .format(classnames[np.argmax(score)], 100 * np.max(score))
             )
-        st.image(file_upload)
+        st.image(file_upload_2)
 
 
 
