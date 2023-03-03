@@ -37,7 +37,7 @@ def create_model(data_augmentation):
 
 if __name__ == "__main__":
     
-    directory = "D:/Coursework/Mod-3/Unstructured Data Analytics/Project/images/MSBA_FACE"
+    directory = "path/to/images"
     img_height, img_width, batch_size = 180, 180, 16
     classnames = os.listdir(directory)
     data_dir = pathlib.Path(directory)
