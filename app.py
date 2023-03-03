@@ -18,7 +18,7 @@ selected = option_menu(None, ["Home", "Analysis", "Image Recognition", "ChatGPTL
 
 if selected == "Home":
     st.sidebar.title("Welcome to the most iconic Streamlit multipage Dashboard")
-    image = Image.open("D:/Coursework\Mod-3/Unstructured Data Analytics/Project/NDGD.jpeg")
+    image = Image.open("path/to/NDGD.jpeg")
     aspect_ratio = image.width / image.height
     height = int(st.experimental_get_query_params().get("height", ["1000"])[0])
     width = int((height - 100) * aspect_ratio)
@@ -104,7 +104,7 @@ if selected == "Analysis":
 
 
 if selected == "ChatGPTLite":
-    image = Image.open("D:/Coursework\Mod-3/Unstructured Data Analytics/Project/BOT.jpeg")
+    image = Image.open("path/to/BOT.jpeg")
     aspect_ratio = image.width / image.height
     height = int(st.experimental_get_query_params().get("height", ["1000"])[0])
     width = int((height - 100) * aspect_ratio)
@@ -119,8 +119,8 @@ if selected == "Image Recognition":
     file_upload_2 = st.sidebar.file_uploader(label="Choose a File to upload") # File upload space
 
     if file_upload_2 is not None:
-        classnames = os.listdir("D:/Coursework/Mod-3/Unstructured Data Analytics/Project/images/MSBA_FACE")
-        model = keras.models.load_model('D:/Coursework/Mod-3/Unstructured Data Analytics/Project/face_recognition_model.h5')
+        classnames = os.listdir("path/to/images")
+        model = keras.models.load_model('path/to/face_recognition_model.h5')
         img = keras.preprocessing.image.load_img(
             file_upload_2, target_size = (180, 180))
         img_array = keras.preprocessing.image.img_to_array(img)
