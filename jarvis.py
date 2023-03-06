@@ -1,5 +1,5 @@
-import os, datetime, pyttsx3, time, json, requests, smtplib, geocoder, wikipedia, webbrowser, random
-import xlwings as xw, speech_recognition as sr
+import os, datetime, pyttsx3, time, json, requests, geocoder, wikipedia, webbrowser, random
+import speech_recognition as sr
 import groupMe, other_funcs
 
 
