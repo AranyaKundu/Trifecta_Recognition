@@ -1,4 +1,4 @@
-import os, pyttsx3, xlwings, datetime, time, pyaudio, geocoder, random, webbrowser
+import os, pyttsx3, datetime, time, pyaudio, geocoder, random, webbrowser
 import speech_recognition as sr
 from selenium import webdriver
 
